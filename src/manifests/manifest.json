@@ -1,0 +1,37 @@
+{
+  "name": "hello chrome",
+  "version": "1.0",
+  "description": "",
+  "permissions": [
+    "nativeMessaging",
+    "activeTab",
+    "declarativeContent",
+    "storage",
+    "tabs",
+    "webRequest",
+    "<all_urls>"
+  ],
+  "options_page": "options.html",
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": true
+  },
+  "page_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "sample_16.png",
+      "32": "sample_32.png",
+      "48": "sample_48.png",
+      "128": "sample_128.png"
+    }
+  },
+  "icons": {
+    "16": "sample_16.png",
+    "32": "sample_32.png",
+    "48": "sample_48.png",
+    "128": "sample_128.png"
+  },
+  "manifest_version": 2
+}
