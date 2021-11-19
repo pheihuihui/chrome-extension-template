@@ -1,37 +1,32 @@
 {
-  "name": "hello chrome",
-  "version": "1.0",
-  "description": "",
+  "name": "Template",
+  "action": {},
+  "manifest_version": 3,
+  "version": "0.1",
+  "description": "...",
   "permissions": [
-    "nativeMessaging",
     "activeTab",
-    "declarativeContent",
-    "storage",
-    "tabs",
-    "webRequest",
-    "<all_urls>"
+    "scripting"
   ],
-  "options_page": "options.html",
   "background": {
-    "scripts": [
-      "background.js"
-    ],
-    "persistent": true
+    "service_worker": "background.js"
   },
-  "page_action": {
-    "default_popup": "popup.html",
-    "default_icon": {
-      "16": "sample_16.png",
-      "32": "sample_32.png",
-      "48": "sample_48.png",
-      "128": "sample_128.png"
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.google.com/*"
+      ],
+      "css": [
+        "style.css"
+      ],
+      "js": [
+        "content.js"
+      ]
     }
-  },
+  ],
   "icons": {
-    "16": "sample_16.png",
-    "32": "sample_32.png",
-    "48": "sample_48.png",
-    "128": "sample_128.png"
-  },
-  "manifest_version": 2
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
 }
